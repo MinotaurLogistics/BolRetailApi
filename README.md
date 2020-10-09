@@ -16,20 +16,10 @@ PHP 5.5 and later
 ## Installation & Usage
 ### Composer
 
-To install the bindings via [Composer](http://getcomposer.org/), add the following to `composer.json`:
+To install via [Composer](http://getcomposer.org/):
 
 ```
-{
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/minotaurlogistics/bol-retailer-api.git"
-    }
-  ],
-  "require": {
-    "minotaurlogistics/bol-retailer-api": "*@dev"
-  }
-}
+composer require minotaurlogistics/bol-retailer-api
 ```
 
 Then run `composer install`
@@ -262,15 +252,3 @@ Class | Method | HTTP request | Description
  - [UpdateSubscriptionRequest](docs/Model/UpdateSubscriptionRequest.md)
  - [ValidationReportResponse](docs/Model/ValidationReportResponse.md)
  - [Violation](docs/Model/Violation.md)
-
-
-## Documentation For Authorization
-
- All endpoints do not require authorization.
-
-
-## Author
-
-
-
-
