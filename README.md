@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/MinotaurLogistics/BolRetailApi.svg?token=mg4y1JLCvJ9QEyqzQ2sd&branch=master)](https://travis-ci.com/MinotaurLogistics/BolRetailApi)
+
 # SwaggerClient-php
 The bol.com API for Retailers.
 
