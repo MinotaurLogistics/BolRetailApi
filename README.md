@@ -41,6 +41,18 @@ composer install
 ./vendor/bin/phpunit
 ```
 
+## Regenerate Client
+
+```
+docker run --rm -v ${PWD}:/codegen/SwaggerClient-php swaggerapi/swagger-codegen-cli generate \
+    -i https://api.bol.com/retailer/public/apispec/v4 \
+    -o /codegen \
+    -l php \
+    --git-user-id minotaurlogistics --git-repo-id bol-retailer-api \ 
+    --invoker-package 'Swagger\BolClient' \ 
+    --artifact-version 1.0 \
+    --api-package 'GeneratedApi'
+```
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
@@ -49,19 +61,8 @@ Please follow the [installation procedure](#installation--usage) and then run th
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Swagger\BolClient\Api\BETAApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$subscription_id = 1234; // int | A unique identifier for the subscription
-
-try {
-    $result = $apiInstance->deletePushNotificationSubscription($subscription_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling BETAApi->deletePushNotificationSubscription: ', $e->getMessage(), PHP_EOL;
-}
+$api = \Swagger\BolClient\Api\OffersApi::createWithCredentials('key_here', 'secret_here');
+$offer = $api->getOffer('offer_id');
 
 ?>
 ```
